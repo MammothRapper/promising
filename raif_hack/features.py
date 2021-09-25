@@ -10,7 +10,8 @@ def prepare_categorical(df: pd.DataFrame) -> pd.DataFrame:
     :return: dataframe
     """
     df_new = df.copy()
-    fillna_cols = ['region','city','street','realty_type', 'floor']
+    #region, realty_type, city - нет пропусков
+    fillna_cols = ['street', 'floor']
     df_new[fillna_cols] = df_new[fillna_cols].fillna(UNKNOWN_VALUE)
     return df_new
 
